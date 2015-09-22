@@ -1,0 +1,46 @@
+<html>
+<head>
+	<title>DST</title>
+	<script>
+		var ArrayCollection = {
+			elem:[],
+			size:0,
+			init:function(data,n){
+				this.elem = data;
+				this.size = n;
+			},
+			add:function(d){
+				this.elem.push(d);
+				this.size++;
+			},
+			remove:function(d){
+				for(var i=0;i<this.size;i++){
+					if(this.elem[i]===d){
+						this.elem.splice(i,1);
+						this.size--;
+					}
+				}
+			},
+			isEmpty:function(){
+				return this.size==0;
+			},
+			contains:function(d){
+				for(var i=0;i<this.size;i++){
+					if(this.elem[i]===d){return true;}
+				}
+				return false;
+			}
+		};
+		var data = [1,3,7,9];
+		ArrayCollection.init(data,4);
+		ArrayCollection.add(10);
+		alert(ArrayCollection.size);
+		ArrayCollection.remove(3);
+		
+		alert(ArrayCollection.elem);
+		alert(ArrayCollection.size);
+	</script>
+</head>
+<body>
+</body>
+</html>
